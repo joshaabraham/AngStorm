@@ -35,7 +35,6 @@ export class ChildComponent implements OnInit {
 
 
   createTable() {
-
     this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.sort = this.sort;
   }
