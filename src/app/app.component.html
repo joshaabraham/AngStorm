@@ -1,20 +1,136 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <p></p>
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="300" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+     
+<app-child [data]="data"></app-child>
+
+<app-child-detail></app-child-detail>
+
+  
+    
+
+    <div class="table-page-container" [@fadeInAnimation]>
+      <div class="mat-elevation-z3" [@fadeInAnimation]>
+
+<!-- 
+    <ng-container>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h2>REPORT_FLEET_METRIC_REPORT</h2>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form (ngSubmit)="generateReport(f)" #f="ngForm">
+
+          <mat-form-field>
+            <div>
+              <mat-select [(ngModel)]="selectedFood" placeholder="Food" name="foody">
+                <mat-option *ngFor="let food of foods" (onSelectionChange)="proposeCondiment($event)" [value]="food">
+                  {{food.viewValue}}</mat-option>
+              </mat-select>
+            </div>
+          </mat-form-field>
+
+          <mat-form-field>
+            <div>
+              <mat-select [(ngModel)]="selectCondiment" placeholder="Condiments" name="condi" [disabled]="false"
+                multiple>
+                <mat-option *ngFor="let condi of accompagnements" [value]="condi">{{condi.name}}</mat-option>
+              </mat-select>
+            </div>
+          </mat-form-field>
+
+          <div>
+            <mat-form-field>
+              <input matInput [matDatepicker]="startDate" placeholder="Start Date" required name="startDate"
+                id="startDate" ngModel>
+              <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+              <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+
+
+
+            <mat-form-field style="margin:7px">
+              <input matInput [matDatepicker]="endDate" placeholder="End Date" required name="endDate" id="endDate"
+                ngModel>
+              <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+              <mat-datepicker #endDate></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Generate</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+
+    
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+
+          <h2>REPORT_STOP_METRIC_REPORT</h2>
+
+        </mat-expansion-panel-header>
+
+        <form (ngSubmit)="generateReport2(g)" #g="ngForm">
+
+          <div>
+            <mat-form-field>
+              <input matInput [matDatepicker]="startDate2" placeholder="Start Date" required name="startDate2"
+                id="startDate2" ngModel>
+              <mat-datepicker-toggle matSuffix [for]="startDate2"></mat-datepicker-toggle>
+              <mat-datepicker #startDate2></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field style="margin:7px">
+              <input matInput [matDatepicker]="endDate2" placeholder="End Date" required name="endDate2" id="endDate2"
+                ngModel>
+              <mat-datepicker-toggle matSuffix [for]="endDate2"></mat-datepicker-toggle>
+              <mat-datepicker #endDate2></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select placeholder="Favorite food" [(ngModel)]="model.pref" id="preference" name="preference">
+                <mat-option *ngFor="let food of foods" [value]="food.value" required name="preference">
+                  {{food.viewValue}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <hr>
+            <br>
+            <div>
+              <ul>
+                <li *ngFor="let food of foods">
+                  <mat-checkbox [value]="food.value" name="FoodChosen" ngModel>{{food.viewValue}}</mat-checkbox>
+                </li>
+              </ul>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit">Generate</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </ng-container>
+    -->
+  
+    <!-- <ng-container>
+      <mat-calendar
+      [dateClass]="dateClass()" [selected]="selectedDate" (selectedChange)="onSelect($event)">
+      </mat-calendar>
+    </ng-container> -->
+
+  </div>
+</div>
